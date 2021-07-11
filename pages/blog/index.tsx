@@ -1,13 +1,14 @@
 import path from 'path'
 import fs from 'fs'
-import Layout from '../../components/Layout'
+import Link from 'next/link'
 import matter from 'gray-matter'
 import { config } from '../../utils'
-import BlogIndexItem from '../../components/BlogIndexItem'
+import Layout from '../../components/Layout'
 
 type Post = {
   slug: string;
   title: string;
+  date: Date;
 }
 
 type BlogProps = {
@@ -15,10 +16,25 @@ type BlogProps = {
 }
 
 export default function Blog({ posts }: BlogProps) {
-  const postList = () => posts.map(post => BlogIndexItem({
-    title: post.title,
-    href: `/blog/posts/${post.slug}`
-  }))
+  const postList = () => {
+    return (
+      <>
+        <h2 className="text-2xl font-semibold mb-2">Posts</h2>
+
+        {posts.map(post => {
+          return (
+            <article key={post.slug} className="pb-2">
+              <Link href={`/blog/posts/${post.slug}`}>
+                <a className="no-underline hover:underline focus:underline transition-all ease-in-out duration-200">
+                  <h3>{new Date(post.date).toLocaleDateString()} - {post.title}</h3>
+                </a>
+              </Link>
+            </article>
+          )
+        })}
+      </>
+    )
+  }
 
   return (
     <Layout title="Blog">
@@ -37,7 +53,7 @@ export async function getStaticProps(): Promise<{ props: BlogProps }> {
     return {
       date: (meta.date ? meta.date : new Date()).toString(),
       title: meta.title,
-      slug
+      slug,
     }
   })
 
