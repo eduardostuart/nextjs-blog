@@ -4,7 +4,7 @@
 
 
 html, body {
-  @apply antialiased font-sans;
+  @apply antialiased font-lora;
 }
 
 body {

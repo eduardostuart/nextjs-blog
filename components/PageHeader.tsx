@@ -8,11 +8,11 @@ type PageHeaderProps = {
 
 export default function PageHeader({ className }: PageHeaderProps) : JSX.Element {
   return (
-    <header className={['flex items-center py-6 border-b', className || ''].join(' ')}>
+    <header className={['text-center pt-8', className || ''].join(' ')}>
       <Link href="/">
         <a><Logo /></a>
       </Link>
-      <Nav className="ml-auto" />
+      <Nav className="justify-center py-8" />
     </header>
   )
 }

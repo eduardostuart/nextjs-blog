@@ -15,7 +15,7 @@ export default function Layout({ children, title }: LayoutProps) : JSX.Element {
         </Head>
 
         <div className="mx-auto max-w-4xl">
-          <PageHeader className="border-b mb-4" />
+          <PageHeader className="mb-4" />
           {children}
         </div>
 
