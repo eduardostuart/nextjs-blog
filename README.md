@@ -2,6 +2,13 @@
 
 > Minimalist blog using Next.js.
 
+## Features
+
+[ ] Tags
+[ ] MDXJS
+[ ] RSS
+[ ] ... tbd
+
 # How to use this template
 
 1. Click on "Use this template"
