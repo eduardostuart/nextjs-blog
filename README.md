@@ -4,6 +4,7 @@
 
 ## Features
 
+- [x] Markdown
 - [ ] Tags
 - [ ] MDXJS
 - [ ] RSS
