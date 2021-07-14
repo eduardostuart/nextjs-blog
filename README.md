@@ -4,10 +4,10 @@
 
 ## Features
 
-[ ] Tags
-[ ] MDXJS
-[ ] RSS
-[ ] ... tbd
+- [ ] Tags
+- [ ] MDXJS
+- [ ] RSS
+- [ ] ... tbd
 
 # How to use this template
 
